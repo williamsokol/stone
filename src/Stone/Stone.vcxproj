@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9C871400-639F-40E0-A213-89B64B6E99D8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Stone</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;STONE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(BWAPI_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(BWAPI_DIR)/lib/BWAPId.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;STONE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(BWAPI_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <DisableLanguageExtensions>true</DisableLanguageExtensions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(BWAPI_DIR)/lib/BWAPI.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="behavior\behavior.cpp" />
+    <ClCompile Include="behavior\chasing.cpp" />
+    <ClCompile Include="behavior\constructing.cpp" />
+    <ClCompile Include="behavior\defaultBehavior.cpp" />
+    <ClCompile Include="behavior\fleeing.cpp" />
+    <ClCompile Include="behavior\harassing.cpp" />
+    <ClCompile Include="behavior\mining.cpp" />
+    <ClCompile Include="behavior\repairing.cpp" />
+    <ClCompile Include="behavior\scouting.cpp" />
+    <ClCompile Include="behavior\walking.cpp" />
+    <ClCompile Include="bwem\src\area.cpp" />
+    <ClCompile Include="bwem\src\base.cpp" />
+    <ClCompile Include="bwem\src\bwapiExt.cpp" />
+    <ClCompile Include="bwem\src\bwem.cpp" />
+    <ClCompile Include="bwem\src\cp.cpp" />
+    <ClCompile Include="bwem\src\examples.cpp" />
+    <ClCompile Include="bwem\src\graph.cpp" />
+    <ClCompile Include="bwem\src\map.cpp" />
+    <ClCompile Include="bwem\src\mapDrawer.cpp" />
+    <ClCompile Include="bwem\src\mapImpl.cpp" />
+    <ClCompile Include="bwem\src\neutral.cpp" />
+    <ClCompile Include="bwem\src\tiles.cpp" />
+    <ClCompile Include="bwem\src\utils.cpp" />
+    <ClCompile Include="bwem\src\winutils.cpp" />
+    <ClCompile Include="debug.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="infoDrawer.cpp" />
+    <ClCompile Include="myassert.cpp" />
+    <ClCompile Include="strategy.cpp" />
+    <ClCompile Include="territory\stronghold.cpp" />
+    <ClCompile Include="territory\varea.cpp" />
+    <ClCompile Include="territory\vbase.cpp" />
+    <ClCompile Include="territory\vcp.cpp" />
+    <ClCompile Include="territory\vmap.cpp" />
+    <ClCompile Include="units\bwapiUnits.cpp" />
+    <ClCompile Include="units\critters.cpp" />
+    <ClCompile Include="units\faceOff.cpp" />
+    <ClCompile Include="units\him.cpp" />
+    <ClCompile Include="units\his.cpp" />
+    <ClCompile Include="units\me.cpp" />
+    <ClCompile Include="units\my.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="vect.cpp" />
+    <ClCompile Include="Stone.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="behavior\behavior.h" />
+    <ClInclude Include="behavior\chasing.h" />
+    <ClInclude Include="behavior\constructing.h" />
+    <ClInclude Include="behavior\defaultBehavior.h" />
+    <ClInclude Include="behavior\fleeing.h" />
+    <ClInclude Include="behavior\harassing.h" />
+    <ClInclude Include="behavior\mining.h" />
+    <ClInclude Include="behavior\repairing.h" />
+    <ClInclude Include="behavior\scouting.h" />
+    <ClInclude Include="behavior\walking.h" />
+    <ClInclude Include="bwem\src\area.h" />
+    <ClInclude Include="bwem\src\base.h" />
+    <ClInclude Include="bwem\src\bwapiExt.h" />
+    <ClInclude Include="bwem\src\bwem.h" />
+    <ClInclude Include="bwem\src\cp.h" />
+    <ClInclude Include="bwem\src\defs.h" />
+    <ClInclude Include="bwem\src\examples.h" />
+    <ClInclude Include="bwem\src\graph.h" />
+    <ClInclude Include="bwem\src\map.h" />
+    <ClInclude Include="bwem\src\mapDrawer.h" />
+    <ClInclude Include="bwem\src\mapImpl.h" />
+    <ClInclude Include="bwem\src\neutral.h" />
+    <ClInclude Include="bwem\src\tiles.h" />
+    <ClInclude Include="bwem\src\utils.h" />
+    <ClInclude Include="bwem\src\winutils.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="defs.h" />
+    <ClInclude Include="infoDrawer.h" />
+    <ClInclude Include="myassert.h" />
+    <ClInclude Include="strategy.h" />
+    <ClInclude Include="territory\stronghold.h" />
+    <ClInclude Include="territory\varea.h" />
+    <ClInclude Include="territory\vbase.h" />
+    <ClInclude Include="territory\vcp.h" />
+    <ClInclude Include="territory\vmap.h" />
+    <ClInclude Include="units\bwapiUnits.h" />
+    <ClInclude Include="units\critters.h" />
+    <ClInclude Include="units\faceOff.h" />
+    <ClInclude Include="units\him.h" />
+    <ClInclude Include="units\his.h" />
+    <ClInclude Include="units\me.h" />
+    <ClInclude Include="units\my.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="vect.h" />
+    <ClInclude Include="Stone.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\LICENSE.txt" />
+    <Text Include="..\README.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
